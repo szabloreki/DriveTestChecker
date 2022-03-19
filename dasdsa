@@ -1,0 +1,54 @@
+  /*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package cube1;
+import java.util.*;  
+import java.util.Random;
+/**
+ *
+ * @author Student
+ */
+public class Cube1
+{
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)
+    {
+      Random dice = new Random();
+      Player player = new Player();
+      int number;
+      int guessedNumber;
+
+      System.out.println("Wylosowano liczbę");
+        do {
+            number = dice.nextInt(6);
+            guessedNumber = player.guessNumber();
+            System.out.println("Wylosowano liczbę:" + number);
+            System.out.println("zgadnięto liczbę:" + guessedNumber);
+        } while(guessedNumber != number);
+      System.out.println("BRAWO WYGRAŁEŚ ŻYCIE" );
+    }
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cube1;
+import java.util.Random;
+
+
+/**
+ *
+ * @author Student
+ */
+public class Player {
+
+    private Random brain = new Random();
+
+    public int guessNumber() {
+      return brain.nextInt(6);
+    }
+}
